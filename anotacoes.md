@@ -72,5 +72,8 @@ DATABASES = {
 ```python
 python manage.py makemigrations
 
-python manage.oy migrate
+python manage.py migrate
 ```
+### Filtros, buscas e admin
+
+* Nas URLd dá para ver que o Django já cria uma parte administrativa e com um comando podemos criar um usuário para a parte admnistrativa `python manage.py createsuperuser`

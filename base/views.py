@@ -1,21 +1,20 @@
 from base.forms import CadastroForm
 from django.http import HttpResponse
 from django.shortcuts import render
+from base.models import Cadastro
 
 # Create your views here.
 def inicio(request):
     return render(request, 'inicio.html')
 
-def cadastro(resquest):
+def cadastro(request):
     sucesso = False
-    if resquest.method == 'GET':
-        form = CadastroForm()
-    else:
-        form = CadastroForm(resquest.POST)
-        if form.is_valid():
-            sucesso = True
+    form = CadastroForm(request.POST or None) 
+    if form.is_valid():
+        sucesso = True
+        form.save()
     contexto = {
         'form': form,
         'sucesso': sucesso
     }
-    return render (resquest, 'cadastro.html')
+    return render(request, 'cadastro.html', contexto)
