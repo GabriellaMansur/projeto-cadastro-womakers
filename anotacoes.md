@@ -53,3 +53,24 @@ urlpatterns = [
 * Todo css e javascript precisa ficar dentro da pasta static
 * Fazer o procedimento de criar a view e a url dessa view
 * Para que os recursos que colocamos em static funcionam, precisamos instalar o bootstrao com o comando `pip install django-boostrap-v5`
+
+### Models
+* No django, sempre que formos trabalhar com banco de dados, temos que escrever dentro desse arquivo chamado models
+* Models são uma abstração que permitem que claase python representem tabelas do banco de dados. Cada classe que definirmos aqui vai representar uma tabela que guarda informações no banco de dados
+* Em settins temos que definir qual banco de dados vamos usar, no django já vem o sqlite por padrão
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+```
+
+* Sempre que mudamos qualquer coisa no banco de dados, temos que rodar esses dois comandos:
+```python
+python manage.py makemigrations
+
+python manage.oy migrate
+```
