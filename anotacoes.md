@@ -77,3 +77,10 @@ python manage.py migrate
 ### Filtros, buscas e admin
 
 * Nas URLd dá para ver que o Django já cria uma parte administrativa e com um comando podemos criar um usuário para a parte admnistrativa `python manage.py createsuperuser`
+
+### Djando ORM
+
+* Vamos começar a trabalhar com manipulação em banco de dados, para isso criaremos um novo app com `python manage.py startapp cursos`
+* Lembrando que quando criamos algo novo temos que informar nosso projeto, então ir até settings.py e adicioná-lo em instaled apps
+* Depois de criado precisamos rodar o comando que vai criar as ligações e que queremos fazer inserções no banco de dados `python  manage.py makemigrations` e depois de criado vamos efetuar de fato essas mudanças com `python manage.py migrate`
+* Como queremos que essa parte de crusos também apareça na parte adminstrativa, temos que ir até admin.py e adicionar nossa model
