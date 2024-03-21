@@ -3,9 +3,9 @@ from django.db import models
 # Create your models here.
 class Curso(models.Model):
     niveis_de_curso = (
-        (0, 'Iniciante'),
-        (1, 'Intermediário'),
-        (2, 'Avançado')
+        ('Iniciante', 'Iniciante'),
+        ('Intermediário', 'Intermediário'),
+        ('Avançado', 'Avançado')
     )
     titulo = models.CharField(max_length=50)
     nivel = models.CharField(max_length=50, choices=niveis_de_curso)
