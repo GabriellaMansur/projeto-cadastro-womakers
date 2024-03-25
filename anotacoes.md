@@ -84,3 +84,26 @@ python manage.py migrate
 * Lembrando que quando criamos algo novo temos que informar nosso projeto, então ir até settings.py e adicioná-lo em instaled apps
 * Depois de criado precisamos rodar o comando que vai criar as ligações e que queremos fazer inserções no banco de dados `python  manage.py makemigrations` e depois de criado vamos efetuar de fato essas mudanças com `python manage.py migrate`
 * Como queremos que essa parte de crusos também apareça na parte adminstrativa, temos que ir até admin.py e adicionar nossa model
+
+* Agora criamos o app de cadastro de curso. Fezeimos a model, o forms, o template html e usamos a view para ligar esses dois últimos. Mas onde o nosso cadastro de cursos aparacerá? Como o usuário chegará até ele? Para isso teremos que criar um caminho até ele, uma url, uma rota
+  * Para isso criaremos um arquivo chamado urls, veja abaixo como ele ficou
+```python
+from django.urls import path
+from cursos.views import criar_curso
+
+app_name = 'Cursos'
+urlpatterns = [
+    path('criar_curso/', criar_curso, name='criar curso')
+]
+```
+
+* Recaptulando o que fizemos: criamos uma url para chegar na nossa visualização, essa visualização está fazenod a lógica por trás do criar curso que renderiza os campos do formulário. Formulário que por sua vez importa o que a model está salvando no banco de dados
+
+### Validação de formulários
+
+*
+
+
+### Utilizando cache na aplicação
+
+* Depois de olhar a documentaçao escolhemos o redis. Para instalar digite `pip install redis`

@@ -6,5 +6,5 @@ class CadastroForm(forms.ModelForm):
     class Meta:
         model = Cadastro
         fields = ['nome', 'email', 'senha']
-        widhets = {'senha': forms.PasswordInput()}
+        widgets = {'senha': forms.PasswordInput()}
    
